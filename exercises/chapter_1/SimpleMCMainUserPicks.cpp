@@ -1,6 +1,6 @@
 //
 //
-//	          	SimpleMCMainPut.cpp
+//	          	SimpleMCMainUserPicks.cpp
 //
 //     
 //       requires Random1.cpp
@@ -8,15 +8,18 @@
 #include <Random1.h>
 #include <iostream>
 #include <cmath>
+#include <string>
+
 using namespace std;
 
-double SimpleMonteCarloPut(double Expiry, 
-						   double Strike, 
-						   double Spot, 
-						   double Vol, 
-						   double r, 
-						   unsigned long NumberOfPaths)
-{
+double SimpleMonteCarloOption(double Expiry, 
+								double Strike, 
+								double Spot, 
+								double Vol, 
+								double r,
+								bool isCall,
+								unsigned long NumberOfPaths)
+	{
 
 	double variance = Vol*Vol*Expiry;
 	double rootVariance = sqrt(variance);
@@ -30,7 +33,7 @@ double SimpleMonteCarloPut(double Expiry,
 	{
 		double thisGaussian = GetOneGaussianByBoxMuller();
 		thisSpot = movedSpot*exp( rootVariance*thisGaussian);
-		double thisPayoff = Strike - thisSpot;
+		double thisPayoff = isCall ? Strike - thisSpot : thisSpot - Strike;
     	thisPayoff = thisPayoff >0 ? thisPayoff : 0;
 		runningSum += thisPayoff;
 	}
@@ -49,6 +52,10 @@ int main()
 	double Vol; 
 	double r; 
 	unsigned long NumberOfPaths;
+	string optionType;
+
+	cout << "\nEnter an option type [call or put]\n";
+	cin >> optionType;
 
 	cout << "\nEnter expiry\n";
 	cin >> Expiry;
@@ -68,12 +75,13 @@ int main()
 	cout << "\nNumber of paths\n";
 	cin >> NumberOfPaths;
 	 
-	double result = SimpleMonteCarloPut(Expiry,
-										Strike, 
-										Spot, 
-										Vol, 
-										r, 
-										NumberOfPaths);
+	double result = SimpleMonteCarloOption(Expiry,
+											Strike, 
+											Spot, 
+											Vol, 
+											r,
+											0 == optionType.compare("call"),
+											NumberOfPaths);
 
 	cout <<"the price is " << result << "\n";
 

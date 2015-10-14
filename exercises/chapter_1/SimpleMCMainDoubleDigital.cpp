@@ -1,6 +1,6 @@
 //
 //
-//	          	SimpleMCMainPut.cpp
+//	          	SimpleMCMainDoubleDigital.cpp
 //
 //     
 //       requires Random1.cpp
@@ -10,12 +10,13 @@
 #include <cmath>
 using namespace std;
 
-double SimpleMonteCarloPut(double Expiry, 
-						   double Strike, 
-						   double Spot, 
-						   double Vol, 
-						   double r, 
-						   unsigned long NumberOfPaths)
+double SimpleMonteCarloDoubleDigital(double Expiry, 
+									double UpperStrike, 
+									double LowerStrike, 
+									double Spot, 
+									double Vol, 
+									double r, 
+									unsigned long NumberOfPaths)
 {
 
 	double variance = Vol*Vol*Expiry;
@@ -30,8 +31,7 @@ double SimpleMonteCarloPut(double Expiry,
 	{
 		double thisGaussian = GetOneGaussianByBoxMuller();
 		thisSpot = movedSpot*exp( rootVariance*thisGaussian);
-		double thisPayoff = Strike - thisSpot;
-    	thisPayoff = thisPayoff >0 ? thisPayoff : 0;
+		double thisPayoff = (thisSpot < UpperStrike) && (thisSpot > LowerStrike) ? 1 : 0;
 		runningSum += thisPayoff;
 	}
 
@@ -44,7 +44,8 @@ int main()
 {
 
 	double Expiry;
-	double Strike; 
+	double UpperStrike; 
+	double LowerStrike; 
 	double Spot; 
 	double Vol; 
 	double r; 
@@ -53,8 +54,11 @@ int main()
 	cout << "\nEnter expiry\n";
 	cin >> Expiry;
 
-	cout << "\nEnter strike\n";
-	cin >> Strike;
+	cout << "\nEnter upper strike\n";
+	cin >> UpperStrike;
+
+	cout << "\nEnter lower strike\n";
+	cin >> LowerStrike;
 
 	cout << "\nEnter spot\n";
 	cin >> Spot;
@@ -68,12 +72,13 @@ int main()
 	cout << "\nNumber of paths\n";
 	cin >> NumberOfPaths;
 	 
-	double result = SimpleMonteCarloPut(Expiry,
-										Strike, 
-										Spot, 
-										Vol, 
-										r, 
-										NumberOfPaths);
+	double result = SimpleMonteCarloDoubleDigital(Expiry,
+													UpperStrike, 
+													LowerStrike, 
+													Spot, 
+													Vol, 
+													r, 
+													NumberOfPaths);
 
 	cout <<"the price is " << result << "\n";
 

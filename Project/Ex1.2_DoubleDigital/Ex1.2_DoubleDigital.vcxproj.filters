@@ -18,7 +18,7 @@
     <ClCompile Include="..\..\DesignCPP\source\Random1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\exercises\chapter_1\SimpleMCMainPut.cpp">
+    <ClCompile Include="..\..\exercises\chapter_1\SimpleMCMainDoubleDigital.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
