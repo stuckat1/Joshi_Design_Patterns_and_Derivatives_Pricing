@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\DesignCPP\mains\SimpleMCMain1.cpp">
+    <ClCompile Include="..\..\exercises\chapter_1\SimpleMCMainPut.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\DesignCPP\source\Random1.cpp">

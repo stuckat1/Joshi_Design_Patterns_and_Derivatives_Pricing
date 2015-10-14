@@ -10,12 +10,12 @@
 #include <cmath>
 using namespace std;
 
-double SimpleMonteCarlo1(double Expiry, 
-						 double Strike, 
-						 double Spot, 
-						 double Vol, 
-						 double r, 
-						 unsigned long NumberOfPaths)
+double SimpleMonteCarloPut(double Expiry, 
+						   double Strike, 
+						   double Spot, 
+						   double Vol, 
+						   double r, 
+						   unsigned long NumberOfPaths)
 {
 
 	double variance = Vol*Vol*Expiry;
@@ -30,7 +30,7 @@ double SimpleMonteCarlo1(double Expiry,
 	{
 		double thisGaussian = GetOneGaussianByBoxMuller();
 		thisSpot = movedSpot*exp( rootVariance*thisGaussian);
-		double thisPayoff = thisSpot - Strike;
+		double thisPayoff = Strike - thisSpot;
     	thisPayoff = thisPayoff >0 ? thisPayoff : 0;
 		runningSum += thisPayoff;
 	}
@@ -68,12 +68,12 @@ int main()
 	cout << "\nNumber of paths\n";
 	cin >> NumberOfPaths;
 	 
-	double result = SimpleMonteCarlo1(Expiry,
-                                      Strike, 
-							          Spot, 
-							          Vol, 
-							          r, 
-						              NumberOfPaths);
+	double result = SimpleMonteCarloPut(Expiry,
+										Strike, 
+										Spot, 
+										Vol, 
+										r, 
+										NumberOfPaths);
 
 	cout <<"the price is " << result << "\n";
 
