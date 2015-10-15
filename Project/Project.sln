@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleMonteCarlo1", "SimpleMonteCarlo1\SimpleMonteCarlo1.vcxproj", "{E113D28F-504F-47AB-9119-4AB9BE76DBFE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleMCMain1", "SimpleMonteCarlo1\SimpleMonteCarlo1.vcxproj", "{E113D28F-504F-47AB-9119-4AB9BE76DBFE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter 1", "Chapter 1", "{64555DB5-AE2B-4A7A-97BF-A82D8F2BF366}"
 EndProject
@@ -12,6 +12,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1.2_DoubleDigital", "Ex1.2_DoubleDigital\Ex1.2_DoubleDigital.vcxproj", "{71D48461-5DD1-44C8-9CED-35E651E3B8D9}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ex1.3_UserSelects", "Ex1.3_UserSelects\Ex1.3_UserSelects.vcxproj", "{70765046-1650-4129-9712-57A3F14D3D56}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleMCMain2", "SimpleMonteCarlo2\SimpleMonteCarlo2.vcxproj", "{6A2AC7CF-34C0-4785-985B-ABEF86E947AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter 2", "Chapter 2", "{093307AD-1453-485F-8F8C-D710E82D0388}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +57,14 @@ Global
 		{70765046-1650-4129-9712-57A3F14D3D56}.Release|x64.Build.0 = Release|x64
 		{70765046-1650-4129-9712-57A3F14D3D56}.Release|x86.ActiveCfg = Release|Win32
 		{70765046-1650-4129-9712-57A3F14D3D56}.Release|x86.Build.0 = Release|Win32
+		{6A2AC7CF-34C0-4785-985B-ABEF86E947AC}.Debug|x64.ActiveCfg = Debug|x64
+		{6A2AC7CF-34C0-4785-985B-ABEF86E947AC}.Debug|x64.Build.0 = Debug|x64
+		{6A2AC7CF-34C0-4785-985B-ABEF86E947AC}.Debug|x86.ActiveCfg = Debug|Win32
+		{6A2AC7CF-34C0-4785-985B-ABEF86E947AC}.Debug|x86.Build.0 = Debug|Win32
+		{6A2AC7CF-34C0-4785-985B-ABEF86E947AC}.Release|x64.ActiveCfg = Release|x64
+		{6A2AC7CF-34C0-4785-985B-ABEF86E947AC}.Release|x64.Build.0 = Release|x64
+		{6A2AC7CF-34C0-4785-985B-ABEF86E947AC}.Release|x86.ActiveCfg = Release|Win32
+		{6A2AC7CF-34C0-4785-985B-ABEF86E947AC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,5 +74,6 @@ Global
 		{E883FD57-B457-4C0C-A0E8-69299299FF1E} = {64555DB5-AE2B-4A7A-97BF-A82D8F2BF366}
 		{71D48461-5DD1-44C8-9CED-35E651E3B8D9} = {64555DB5-AE2B-4A7A-97BF-A82D8F2BF366}
 		{70765046-1650-4129-9712-57A3F14D3D56} = {64555DB5-AE2B-4A7A-97BF-A82D8F2BF366}
+		{6A2AC7CF-34C0-4785-985B-ABEF86E947AC} = {093307AD-1453-485F-8F8C-D710E82D0388}
 	EndGlobalSection
 EndGlobal
