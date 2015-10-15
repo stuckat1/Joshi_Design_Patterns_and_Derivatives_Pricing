@@ -19,10 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{6A2AC7CF-34C0-4785-985B-ABEF86E947AC}</ProjectGuid>
-    <RootNamespace>SimpleMonteCarlo2</RootNamespace>
+    <ProjectGuid>{17287398-E004-48AE-9AE0-F894FB52047B}</ProjectGuid>
+    <RootNamespace>SimpleMCMain1</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
-    <ProjectName>SimpleMCMain2</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -121,15 +120,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\DesignCPP\mains\SimpleMCMain2.cpp" />
-    <ClCompile Include="..\..\DesignCPP\source\PayOff1.cpp" />
+    <ClCompile Include="..\..\DesignCPP\mains\SimpleMCMain1.cpp" />
     <ClCompile Include="..\..\DesignCPP\source\Random1.cpp" />
-    <ClCompile Include="..\..\DesignCPP\source\SimpleMC.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\DesignCPP\include\PayOff1.h" />
     <ClInclude Include="..\..\DesignCPP\include\Random1.h" />
-    <ClInclude Include="..\..\DesignCPP\include\SimpleMC.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
